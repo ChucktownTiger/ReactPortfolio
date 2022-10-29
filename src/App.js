@@ -1,4 +1,4 @@
-import './App.css';
+// import './App.css';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Home from "./pages/Home";
 import Projects from "./pages/Project";
@@ -11,17 +11,18 @@ function App() {
     return(
         <div className="App">
             <Router>
-                <NavBar />
+                <NavBar></NavBar>
                 <Routes>
-                    <Route path='/' element={<Home />}></Route>
+                    <Route path='/' element={<Home/>}></Route>
                     <Route path='/projects' element={<Projects />}></Route>
                     <Route path='/hobbies' element={<Hobbies />}></Route>
                     <Route path='/experience' element={<Experience />}></Route>
                 </Routes>
-                <Footer />
+                <Footer></Footer>
             </Router>
         </div>
     );
 }
+
 
 export default App;

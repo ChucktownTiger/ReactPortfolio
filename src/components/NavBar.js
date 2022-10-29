@@ -1,9 +1,14 @@
 import React, { useEffect } from 'react';
 import { Link, useLocation} from "react-router-dom";
 import "../styles/NavBar.css";
-import TocIcon from './@mui/icons-material/Toc';
+import ReorderIcon from "@material-ui/icons/Reorder";
 
-function navbar() {
+import { useState } from 'react';
+
+
+
+function NavBar() {
+    
     const [expandNavbar, setExpandNavbar] = useState(false);
     const location = useLocation();
 
@@ -12,11 +17,11 @@ function navbar() {
     }, [location] )
 
 return (
-    <div className='navbar' id={expandNavbar ? "open" : "close"}>
-        <div className='toggleButtton'>
-            <button onClick={() => {setExpandNavbar((prev) => !prev)}}> <TocIcon />
-            </button>
-        </div>
+    <div className='navbar'>
+        {/* <div className='toggleButtton'>
+            <button onClick={() => {setExpandNavbar((prev) => !prev)}}> <ReorderIcon />
+            </button>   id={expandNavbar ? "open" : "close"}
+        </div> */}
         <div className='links'>
             <Link to="/"> Home </Link>
             <Link to="/projects"> Projects </Link>
@@ -24,7 +29,7 @@ return (
             <Link to="/hobbies"> Hobbies </Link>
         </div>
     </div>
-  )
+    )
 }
 
-export default navbar
+export default NavBar
